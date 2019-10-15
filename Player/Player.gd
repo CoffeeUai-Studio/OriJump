@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
 var motion = Vector2()
+var spawn_point = Vector2(100, 100) # coordinates of your initial spawn point
+var alive = true
 
 func _physics_process(delta):
 	
@@ -15,5 +17,12 @@ func _physics_process(delta):
 
 	
 	move_and_slide(motion)	
+	
+	pass
+	
+func _process(delta):
+	
+	if alive = false:
+		position = spawn_point
 	
 	pass
