@@ -4,7 +4,7 @@
 
 [node name="Button" type="Button"]
 margin_right = 167.0
-margin_bottom = 31.0
+margin_bottom = 40.0
 flat = true
 
 [node name="Label" type="Label" parent="."]

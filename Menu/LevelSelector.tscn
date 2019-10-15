@@ -21,9 +21,12 @@ color = Color( 0.239216, 0.247059, 0.321569, 1 )
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = 100.0
+custom_constants/separation = 100
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 1280.0
+margin_right = 1250.0
 margin_bottom = 46.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0.337255, 0.054902, 0.388235, 1 )
@@ -33,28 +36,44 @@ text = "Choose a level"
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 50.0
-margin_right = 1280.0
-margin_bottom = 70.0
+margin_top = 146.0
+margin_right = 1246.72
+margin_bottom = 216.31
 size_flags_horizontal = 3
+size_flags_vertical = 0
 custom_constants/separation = 500
 
 [node name="Button" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
-margin_right = 12.0
-margin_bottom = 20.0
+editor/display_folded = true
+margin_right = 82.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
 
 [node name="Label" parent="VBoxContainer/HBoxContainer/Button" index="0"]
 text = "Level 01"
 
 [node name="Button2" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
-margin_left = 512.0
-margin_right = 524.0
-margin_bottom = 20.0
+editor/display_folded = true
+margin_left = 500.0
+margin_right = 582.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
 
 [node name="Label" parent="VBoxContainer/HBoxContainer/Button2" index="0"]
 text = "Level 02"
+
+[node name="Button3" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
+margin_left = 1045.15
+margin_right = 1240.15
+margin_bottom = 70.0
+size_flags_horizontal = 3
+
+[node name="Label" parent="VBoxContainer/HBoxContainer/Button3" index="0"]
+text = "Level 03"
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
 
 [editable path="VBoxContainer/HBoxContainer/Button"]
 
 [editable path="VBoxContainer/HBoxContainer/Button2"]
+
+[editable path="VBoxContainer/HBoxContainer/Button3"]

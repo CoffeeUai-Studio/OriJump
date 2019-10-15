@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://Menu/Checkpoint.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Menu/Hitbox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Menu/Hitbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Menu/Checkpoint.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.1688, 10 )
@@ -11,7 +11,7 @@ extents = Vector2( 31.1688, 10 )
 [node name="World" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 50.4019, 438.108 )
+position = Vector2( 62.6453, 278.944 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -47,16 +47,18 @@ texture = ExtResource( 2 )
 position = Vector2( 0, -16.8068 )
 shape = SubResource( 1 )
 
-[node name="Checkpoint" parent="." instance=ExtResource( 3 )]
-position = Vector2( 324.989, 619.154 )
-scale = Vector2( 5, 5 )
-
-[node name="Area2D" parent="Checkpoint" index="0"]
-editor/display_folded = true
-position = Vector2( -4.39402, -3.6186 )
-
-[node name="Hitbox" parent="." instance=ExtResource( 4 )]
+[node name="Hitbox" parent="." instance=ExtResource( 3 )]
 position = Vector2( 636.723, 759.157 )
 scale = Vector2( 65.12, 5.71 )
+
+[node name="Checkpoint" parent="." instance=ExtResource( 4 )]
+editor/display_folded = true
+position = Vector2( 85.7036, 387.707 )
+scale = Vector2( 3, 3 )
+
+[node name="Checkpoint2" parent="." instance=ExtResource( 4 )]
+editor/display_folded = true
+position = Vector2( 342.814, 599.925 )
+scale = Vector2( 3, 3 )
 
 [editable path="Checkpoint"]
