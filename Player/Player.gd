@@ -9,6 +9,7 @@ var speed_y = 0
 const jump_force = 2000
 const gravity = 2500
 
+onready var mouse_position = get_global_mouse_position()
 
 func _physics_process(delta):
 	
@@ -35,15 +36,20 @@ func _physics_process(delta):
 		OS.window_fullscreen = !OS.window_fullscreen
 
 
+	mouse_position = get_global_mouse_position()	
+	
 	
 	move_and_slide(motion)	
 	
 	pass
 	
+# OriJump	
 func _input(event):
 	if event.is_action_pressed("ui_jump"):
-		speed_y = - jump_force
-		print("pulo")
+#		speed_y = - jump_force
+		set_position(lerp(get_position(), mouse_position, 1))
+
+		print(mouse_position)
 	
 	
 	pass
@@ -59,6 +65,8 @@ func die ():
 func _process(delta):
 	if alive == false:
 		die()
+	
+	
 		
 	pass
 
