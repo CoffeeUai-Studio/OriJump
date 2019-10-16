@@ -4,23 +4,47 @@ class_name Player
 var motion = Vector2()
 var spawn_point = Vector2(100, 100) # coordinates of your initial spawn point
 onready var  alive = true
+var speed_y = 0
+
+const jump_force = 2000
+const gravity = 2500
+
 
 func _physics_process(delta):
 	
-	motion.y += 10
+	# Movimento
+	motion.y = speed_y * delta
 	
 	if Input.is_action_pressed("ui_right"):
-		motion.x = 200
+		motion.x = 100
 	elif Input.is_action_pressed("ui_left"):
-		motion.x = -200
+		motion.x = -100
 	else:
 		motion.x = 0
 	
-	if Input.is_action_pressed("ui_accept"):
+	
+	
+	speed_y += gravity * delta
+	
+	# Recomeca a fase
+	if Input.is_action_pressed("ui_restart"):
 		die()
+		
+	# Ativa Tela cheia
+	if Input.is_action_just_pressed("ui_fullscreen"):
+		OS.window_fullscreen = !OS.window_fullscreen
+
 
 	
 	move_and_slide(motion)	
+	
+	pass
+	
+func _input(event):
+	if event.is_action_pressed("ui_jump"):
+		speed_y = - jump_force
+		print("pulo")
+	
 	
 	pass
 	
