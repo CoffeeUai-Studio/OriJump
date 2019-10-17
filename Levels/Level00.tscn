@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Menu/Hitbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Hitbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenary/tiles.png" type="Texture" id=3]
-[ext_resource path="res://Menu/Checkpoint.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Checkpoint.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Jump.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -282,7 +283,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [node name="World" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 15.7942, 55.3508 )
+position = Vector2( 16.9148, 76.3574 )
 z_index = 1
 
 [node name="Hitbox" parent="." instance=ExtResource( 2 )]
@@ -296,10 +297,9 @@ format = 1
 tile_data = PoolIntArray( 0, 18, 0, 1, 18, 0, 2, 18, 0, 3, 18, 0, 4, 18, 0, 5, 18, 0, 6, 18, 0, 7, 18, 0, 8, 18, 0, 9, 18, 0, 10, 18, 0, 11, 18, 0, 12, 18, 0, 13, 18, 0, 14, 18, 0, 15, 18, 0, 16, 18, 0, 17, 18, 0, 65536, 0, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 65551, 1, 0, 65552, 1, 0, 65553, 3, 0, 131072, 8, 0, 131073, 9, 0, 131074, 9, 0, 131075, 9, 0, 131076, 9, 0, 131077, 9, 0, 131078, 9, 0, 131079, 9, 0, 131080, 9, 0, 131081, 9, 0, 131082, 9, 0, 131083, 9, 0, 131084, 9, 0, 131085, 9, 0, 131086, 9, 0, 131087, 9, 0, 131088, 9, 0, 131089, 9, 0, 196608, 9, 0, 196609, 9, 0, 196610, 9, 0, 196611, 9, 0, 196612, 9, 0, 196613, 9, 0, 196614, 9, 0, 196615, 9, 0, 196616, 9, 0, 196617, 9, 0, 196618, 9, 0, 196619, 9, 0, 196620, 9, 0, 196621, 9, 0, 196622, 9, 0, 196623, 9, 0, 196624, 9, 0, 196625, 9, 0, 262144, 9, 0, 262145, 9, 0, 262146, 9, 0, 262147, 9, 0, 262148, 9, 0, 262149, 9, 0, 262150, 9, 0, 262151, 9, 0, 262152, 9, 0, 262153, 9, 0, 262154, 9, 0, 262155, 9, 0, 262156, 9, 0, 262157, 9, 0, 262158, 9, 0, 262159, 9, 0, 262160, 9, 0, 262161, 9, 0, 327680, 9, 0, 327681, 9, 0, 327682, 9, 0, 327683, 9, 0, 327684, 9, 0, 327685, 9, 0, 327686, 9, 0, 327687, 9, 0, 327688, 9, 0, 327689, 9, 0, 327690, 9, 0, 327691, 9, 0, 327692, 9, 0, 327693, 9, 0, 327694, 9, 0, 327695, 9, 0, 327696, 9, 0, 327697, 9, 0, 393216, 9, 0, 393217, 9, 0, 393218, 9, 0, 393219, 9, 0, 393220, 9, 0, 393221, 9, 0, 393222, 9, 0, 393223, 9, 0, 393224, 9, 0, 393225, 9, 0, 393226, 9, 0, 393227, 9, 0, 393228, 9, 0, 393229, 9, 0, 393230, 9, 0, 393231, 9, 0, 393232, 9, 0, 393233, 9, 0, 458752, 13, 0, 458753, 13, 0, 458754, 13, 0, 458755, 13, 0, 458756, 13, 0, 458757, 13, 0, 458758, 13, 0, 458759, 13, 0, 458760, 13, 0, 458761, 13, 0, 458762, 13, 0, 458763, 9, 0, 458764, 9, 0, 458765, 9, 0, 458766, 9, 0, 458767, 9, 0, 458768, 9, 0, 458769, 9, 0, 524288, 13, 0, 524289, 14, 0, 524290, 13, 0, 524291, 13, 0, 524292, 13, 0, 524293, 13, 0, 524294, 13, 0, 524295, 13, 0, 524296, 9, 0, 524297, 9, 0, 524298, 9, 0, 524299, 9, 0, 524300, 9, 0, 524301, 9, 0, 524302, 9, 0, 524303, 9, 0, 524304, 9, 0, 524305, 9, 0, 589824, 6, 0, 589825, 5, 0, 589826, 6, 0, 589827, 6, 0, 589828, 5, 0, 589829, 6, 0, 589830, 7, 0, 589831, 9, 0, 589832, 9, 0, 589833, 9, 0, 589834, 4, 0, 589835, 6, 0, 589836, 6, 0, 589837, 6, 0, 589838, 6, 0, 589839, 6, 0, 589840, 6, 0, 589841, 6, 0 )
 
 [node name="Checkpoints" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource( 4 )]
-position = Vector2( 15.2741, 78.7628 )
+position = Vector2( 17.7775, 99.7916 )
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource( 4 )]
 position = Vector2( 105.815, 137.651 )
@@ -312,3 +312,14 @@ position = Vector2( 283.583, 136.915 )
 
 [node name="Checkpoint3" parent="Checkpoints" instance=ExtResource( 4 )]
 position = Vector2( 7.36102, 137.283 )
+
+[node name="Jump" parent="." instance=ExtResource( 5 )]
+position = Vector2( 55.7829, 146.309 )
+scale = Vector2( 5.35, 0.43 )
+
+[node name="Jump2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 224.172, 146.309 )
+scale = Vector2( 6.33, 0.43 )
+
+[node name="Jump3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 138.528, 87.8074 )
