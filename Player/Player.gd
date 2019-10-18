@@ -12,6 +12,8 @@ var speed_y = 0
 
 var can_jump = false
 
+var prev_position
+
 onready var animation : AnimationPlayer = $Sprite/AnimationPlayer
 onready var music : AudioStreamPlayer = $MusicPlayer
 onready var sfx : AudioStreamPlayer = $SFXPlayer
@@ -26,21 +28,15 @@ onready var mouse_position = get_global_mouse_position()
 
 func _ready():
 	music.play()
+	sfx.stream = load("res://Sounds/clear.wav")
+	sfx.play()
+	prev_position = position
 
 func _physics_process(delta):
 	
 	# Movimento
-	if is_on_floor():
-		speed_y = 0
-		can_jump = true
-		print('floor')
-		if motion.x != 0:
-			animation.play("Walk")
-		else:
-			animation.play("Idle")
-	else:
-		motion.y += gravity * delta
-		
+	prev_position = position
+	
 	if motion.x > 0:
 		$Sprite.flip_h = false
 	elif motion.x < 0:
@@ -73,7 +69,6 @@ func _physics_process(delta):
 	
 	motion = move_and_slide(motion)
 	
-	pass
 	
 # OriJump-Attack	
 func _input(event):
@@ -101,9 +96,6 @@ func die ():
 	sfx.stream = load("res://Sounds/death.wav")
 	sfx.play()
 	set_position(spawn_point)
-	motion.y = 0
-	motion = move_and_slide(motion)
-	print("aaah")
 	
 	pass 
 
@@ -111,6 +103,17 @@ func die ():
 func _process(delta):
 	if alive == false:
 		die()
+	if prev_position.y == position.y:
+		speed_y = 0
+		can_jump = true
+		if motion.x >= 20 || motion.x <=-20:
+			animation.play("Walk")
+		else:
+			animation.play("Idle")
+	else:
+		motion.y += gravity * delta
+	
+	pass
 	
 	line.look_at(mouse_position)
 		

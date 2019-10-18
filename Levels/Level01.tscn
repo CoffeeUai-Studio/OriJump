@@ -390,12 +390,5 @@ scale = Vector2( 0.72, 3.16 )
 [node name="JumpyThingy" parent="." instance=ExtResource( 6 )]
 position = Vector2( 174.48, 78.9471 )
 
-[node name="Light2D" parent="JumpyThingy/Sprite" index="1"]
-texture_scale = 0.14
-color = Color( 0.815686, 0.807843, 0.282353, 1 )
-energy = 2.96
-
 [node name="NextLevel" parent="." instance=ExtResource( 7 )]
-position = Vector2( 250, 70 )
-
-[editable path="JumpyThingy"]
+position = Vector2( 261.698, 71.8868 )

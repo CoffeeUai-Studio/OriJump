@@ -33,6 +33,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 0.5, -0.5 ), Vector2( 0.5, 1 ), Vector2( 0.5, -2 ), Vector2( 0.5, -0.5 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Light2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.25, 0.75, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 1.5 ), Vector2( 0, -1.5 ), Vector2( 0, 0 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Jump"
@@ -76,12 +88,13 @@ tracks/2/keys = {
 }
 
 [node name="JumpyThingy" instance=ExtResource( 1 )]
+scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
-offset = Vector2( 0.5, -0.5 )
+offset = Vector2( 0.5, 1 )
 vframes = 4
 hframes = 4
 frame = 2
@@ -93,6 +106,6 @@ anims/Jump = SubResource( 2 )
 [node name="Light2D" type="Light2D" parent="Sprite" index="1"]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
-texture_scale = 5.72
+texture_scale = 0.1
 color = Color( 0.560784, 0.623529, 0.12549, 1 )
-energy = 5.29
+energy = 3.0

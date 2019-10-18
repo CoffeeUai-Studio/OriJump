@@ -1,13 +1,12 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenary/tiles.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Hitbox.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Checkpoint.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Jump.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/JumpyThingy.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Enemy.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Levels/NextLevel3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Checkpoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Jump.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/JumpyThingy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Hitbox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/NextLevel3.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -188,7 +187,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 9/texture = ExtResource( 2 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
-9/region = Rect2( 64, 0, 16, 16 )
+9/region = Rect2( 80, 0, 16, 16 )
 9/tile_mode = 0
 9/occluder_offset = Vector2( 0, 0 )
 9/navigation_offset = Vector2( 0, 0 )
@@ -322,89 +321,83 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 20/texture = ExtResource( 2 )
 20/tex_offset = Vector2( 0, 0 )
 20/modulate = Color( 1, 1, 1, 1 )
-20/region = Rect2( 80, 0, 16, 16 )
+20/region = Rect2( 64, 0, 16, 16 )
 20/tile_mode = 0
 20/occluder_offset = Vector2( 0, 0 )
 20/navigation_offset = Vector2( 0, 0 )
 20/shapes = [  ]
 20/z_index = 0
-21/name = "tiles.png 21"
-21/texture = ExtResource( 2 )
-21/tex_offset = Vector2( 0, 0 )
-21/modulate = Color( 1, 1, 1, 1 )
-21/region = Rect2( 64, 16, 16, 16 )
-21/tile_mode = 0
-21/occluder_offset = Vector2( 0, 0 )
-21/navigation_offset = Vector2( 0, 0 )
-21/shapes = [  ]
-21/z_index = 0
 
 [node name="World" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 15.5504, 129.657 )
+position = Vector2( 7.69713, 118.804 )
 z_index = 1
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 13 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 0, 18, 0, 1, 18, 0, 2, 18, 0, 3, 18, 0, 4, 18, 0, 5, 18, 0, 6, 18, 0, 7, 18, 0, 8, 18, 0, 9, 18, 0, 10, 18, 0, 11, 18, 0, 12, 18, 0, 13, 18, 0, 14, 18, 0, 15, 18, 0, 16, 18, 0, 17, 18, 0, 65536, 17, 0, 65537, 17, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 65551, 1, 0, 65552, 1, 0, 65553, 3, 0, 196607, 19, 0, 131072, 18, 0, 131073, 19, 0, 131074, 13, 0, 131075, 13, 0, 131076, 13, 0, 131077, 13, 0, 131078, 13, 0, 131079, 13, 0, 131080, 13, 0, 131081, 13, 0, 131082, 13, 0, 131083, 13, 0, 131084, 13, 0, 131085, 13, 0, 131086, 13, 0, 131087, 13, 0, 131088, 13, 0, 131089, 16, 0, 131090, 16, 0, 262143, 19, 0, 196608, 18, 0, 196609, 19, 0, 196610, 13, 0, 196611, 13, 0, 196612, 13, 0, 196613, 13, 0, 196614, 13, 0, 196615, 13, 0, 196616, 13, 0, 196617, 13, 0, 196618, 13, 0, 196619, 13, 0, 196620, 13, 0, 196621, 13, 0, 196622, 13, 0, 196623, 13, 0, 196624, 13, 0, 196625, 16, 0, 196626, 16, 0, 327679, 19, 0, 262144, 17, 0, 262145, 19, 0, 262146, 13, 0, 262147, 13, 0, 262148, 4, 0, 262149, 5, 0, 262150, 7, 0, 262151, 13, 0, 262152, 13, 0, 262153, 13, 0, 262154, 13, 0, 262155, 13, 0, 262156, 13, 0, 262157, 13, 0, 262158, 13, 0, 262159, 13, 0, 262160, 13, 0, 262161, 16, 0, 262162, 16, 0, 393215, 19, 0, 327680, 18, 0, 327681, 19, 0, 327682, 13, 0, 327683, 13, 0, 327684, 16, 0, 327685, 18, 0, 327686, 19, 0, 327687, 13, 0, 327688, 13, 0, 327689, 13, 0, 327690, 13, 0, 327691, 13, 0, 327692, 13, 0, 327693, 13, 0, 327694, 13, 0, 327695, 13, 0, 327696, 13, 0, 327697, 16, 0, 327698, 16, 0, 458751, 19, 0, 393216, 2, 0, 393217, 3, 0, 393218, 13, 0, 393219, 13, 0, 393220, 16, 0, 393221, 18, 0, 393222, 19, 0, 393223, 13, 0, 393224, 13, 0, 393225, 13, 0, 393226, 13, 0, 393227, 13, 0, 393228, 13, 0, 393229, 13, 0, 393230, 4, 0, 393231, 5, 0, 393232, 6, 0, 393233, 18, 0, 393234, 16, 0, 524287, 19, 0, 458752, 13, 0, 458753, 13, 0, 458754, 11, 0, 458755, 13, 0, 458756, 16, 0, 458757, 18, 0, 458758, 19, 0, 458759, 13, 0, 458760, 13, 0, 458761, 13, 0, 458762, 13, 0, 458763, 13, 0, 458764, 13, 0, 458765, 13, 0, 458766, 16, 0, 458767, 18, 0, 458768, 18, 0, 458769, 18, 0, 458770, 16, 0, 589823, 19, 0, 524288, 13, 0, 524289, 14, 0, 524290, 13, 0, 524291, 13, 0, 524292, 16, 0, 524293, 18, 0, 524294, 19, 0, 524295, 20, 0, 524296, 20, 0, 524297, 9, 0, 524298, 20, 0, 524299, 9, 0, 524300, 9, 0, 524301, 9, 0, 524302, 16, 0, 524303, 18, 0, 524304, 18, 0, 524305, 18, 0, 524306, 16, 0, 589824, 6, 0, 589825, 5, 0, 589826, 6, 0, 589827, 5, 0, 589828, 18, 0, 589829, 18, 0, 589830, 19, 0, 589831, 21, 0, 589832, 21, 0, 589833, 21, 0, 589834, 21, 0, 589835, 21, 0, 589836, 21, 0, 589837, 21, 0, 589838, 16, 0, 589839, 18, 0, 589840, 17, 0, 589841, 18, 0 )
-
-[node name="Hitbox" parent="." instance=ExtResource( 3 )]
-position = Vector2( 171.28, 193.019 )
-scale = Vector2( 9.4, 5.71 )
+tile_data = PoolIntArray( 0, 18, 0, 1, 18, 0, 2, 18, 0, 3, 18, 0, 4, 18, 0, 5, 18, 0, 6, 18, 0, 7, 18, 0, 8, 18, 0, 9, 18, 0, 10, 18, 0, 11, 18, 0, 12, 18, 0, 13, 18, 0, 14, 18, 0, 15, 18, 0, 16, 18, 0, 17, 18, 0, 65536, 0, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 18, 0, 65549, 18, 0, 65550, 1, 0, 65551, 1, 0, 65552, 1, 0, 65553, 3, 0, 196607, 19, 0, 131072, 8, 0, 131073, 11, 0, 131074, 13, 0, 131075, 13, 0, 131076, 13, 0, 131077, 13, 0, 131078, 13, 0, 131079, 8, 0, 131080, 13, 0, 131081, 13, 0, 131082, 13, 0, 131083, 13, 0, 131084, 16, 0, 131085, 19, 0, 131086, 13, 0, 131087, 13, 0, 131088, 8, 0, 131089, 13, 0, 131090, 16, 0, 262143, 19, 0, 196608, 11, 0, 196609, 11, 0, 196610, 13, 0, 196611, 13, 0, 196612, 13, 0, 196613, 13, 0, 196614, 13, 0, 196615, 13, 0, 196616, 13, 0, 196617, 13, 0, 196618, 10, 0, 196619, 13, 0, 196620, 0, 0, 196621, 3, 0, 196622, 13, 0, 196623, 13, 0, 196624, 12, 0, 196625, 13, 0, 196626, 16, 0, 327679, 19, 0, 262144, 11, 0, 262145, 15, 0, 262146, 14, 0, 262147, 13, 0, 262148, 13, 0, 262149, 11, 0, 262150, 13, 0, 262151, 13, 0, 262152, 13, 0, 262153, 13, 0, 262154, 13, 0, 262155, 11, 0, 262156, 13, 0, 262157, 13, 0, 262158, 13, 0, 262159, 10, 0, 262160, 4, 0, 262161, 6, 0, 262162, 16, 0, 393215, 19, 0, 327680, 11, 0, 327681, 4, 0, 327682, 7, 0, 327683, 10, 0, 327684, 13, 0, 327685, 11, 0, 327686, 15, 0, 327687, 13, 0, 327688, 13, 0, 327689, 13, 0, 327690, 13, 0, 327691, 13, 0, 327692, 13, 0, 327693, 13, 0, 327694, 13, 0, 327695, 11, 0, 327696, 0, 0, 327697, 2, 0, 327698, 16, 0, 458751, 19, 0, 393216, 11, 0, 393217, 16, 0, 393218, 19, 0, 393219, 13, 0, 393220, 13, 0, 393221, 4, 0, 393222, 7, 0, 393223, 13, 0, 393224, 13, 0, 393225, 13, 0, 393226, 13, 0, 393227, 13, 0, 393228, 13, 0, 393229, 13, 0, 393230, 13, 0, 393231, 13, 0, 393232, 13, 0, 393233, 13, 0, 393234, 16, 0, 524287, 19, 0, 458752, 13, 0, 458753, 16, 0, 458754, 19, 0, 458755, 10, 0, 458756, 13, 0, 458757, 16, 0, 458758, 19, 0, 458759, 13, 0, 458760, 13, 0, 458761, 13, 0, 458762, 13, 0, 458763, 13, 0, 458764, 14, 0, 458765, 12, 0, 458766, 13, 0, 458767, 13, 0, 458768, 13, 0, 458769, 13, 0, 458770, 16, 0, 589823, 19, 0, 524288, 13, 0, 524289, 16, 0, 524290, 19, 0, 524291, 13, 0, 524292, 13, 0, 524293, 16, 0, 524294, 19, 0, 524295, 13, 0, 524296, 13, 0, 524297, 13, 0, 524298, 13, 0, 524299, 4, 0, 524300, 5, 0, 524301, 6, 0, 524302, 7, 0, 524303, 13, 0, 524304, 13, 0, 524305, 13, 0, 524306, 16, 0, 589824, 6, 0, 589825, 18, 0, 589826, 17, 0, 589827, 6, 0, 589828, 5, 0, 589829, 18, 0, 589830, 19, 0, 589831, 9, 0, 589832, 20, 0, 589833, 9, 0, 589834, 4, 0, 589835, 18, 0, 589836, 18, 0, 589837, 17, 0, 589838, 18, 0, 589839, 6, 0, 589840, 6, 0, 589841, 6, 0 )
 
 [node name="Checkpoints" type="Node2D" parent="."]
 
-[node name="Checkpoint" parent="Checkpoints" instance=ExtResource( 4 )]
-position = Vector2( 6.48825, 126.133 )
+[node name="Checkpoint4" parent="Checkpoints" instance=ExtResource( 3 )]
+position = Vector2( 164.703, 137.835 )
 
-[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource( 4 )]
-position = Vector2( 96.6164, 54.4451 )
+[node name="Checkpoint5" parent="Checkpoints" instance=ExtResource( 3 )]
+position = Vector2( 65.1046, 136.915 )
 
-[node name="Checkpoint4" parent="Checkpoints" instance=ExtResource( 4 )]
-position = Vector2( 233.693, 86.8243 )
+[node name="Checkpoint3" parent="Checkpoints" instance=ExtResource( 3 )]
+position = Vector2( 7.36102, 137.283 )
 
-[node name="Jump" parent="." instance=ExtResource( 5 )]
-position = Vector2( 31.5759, 146.309 )
-scale = Vector2( 3.39, 0.43 )
+[node name="Jump" parent="." instance=ExtResource( 4 )]
+position = Vector2( 55.7829, 146.309 )
+scale = Vector2( 5.35, 0.43 )
 
-[node name="Jump2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 87.1859, 64.7755 )
-scale = Vector2( 2.19, 0.43 )
+[node name="Jump3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 32.3745, 118.999 )
+scale = Vector2( 1.91, 4.07 )
 
-[node name="Jump7" parent="." instance=ExtResource( 5 )]
-position = Vector2( 248.162, 95.7165 )
-scale = Vector2( 2.53517, 0.43 )
+[node name="Jump4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 95.2846, 133.629 )
+scale = Vector2( 1.91, 4.07 )
 
-[node name="Jump4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 31.5759, 71.0474 )
-scale = Vector2( 0.510001, 3.75 )
+[node name="Jump5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 207.938, 24.3903 )
+scale = Vector2( 1.91, 4.07 )
 
-[node name="Jump8" parent="." instance=ExtResource( 5 )]
-position = Vector2( 111.855, 102.406 )
-scale = Vector2( 0.510001, 3.75 )
+[node name="Jump7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 207.938, 149.723 )
+scale = Vector2( 3.47, 2.51 )
 
-[node name="Jump9" parent="." instance=ExtResource( 5 )]
-position = Vector2( 225.166, 135.856 )
-scale = Vector2( 0.510001, 3.75 )
+[node name="Jump6" parent="." instance=ExtResource( 4 )]
+position = Vector2( -16.8807, 87.788 )
+scale = Vector2( 1.91, 5.57981 )
 
-[node name="Jump5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 65.4657, 102.296 )
-scale = Vector2( 0.510001, 3.75 )
+[node name="Jump8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 304.093, 87.788 )
+scale = Vector2( 1.91, 5.57981 )
 
-[node name="JumpyThingy" parent="." instance=ExtResource( 6 )]
-visible = false
-position = Vector2( 147.596, 86.1328 )
+[node name="Jump9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 271.119, 79.1423 )
+scale = Vector2( 1.91, 1.97981 )
 
-[node name="JumpyThingy2" parent="." instance=ExtResource( 6 )]
-visible = false
-position = Vector2( 195.68, 85.2966 )
+[node name="Jump2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 224.172, 146.309 )
+scale = Vector2( 6.33, 0.43 )
 
-[node name="Enemy" parent="." instance=ExtResource( 7 )]
-visible = false
-position = Vector2( 44.7389, 126.272 )
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
-[node name="NextLevel" parent="." instance=ExtResource( 8 )]
-position = Vector2( 260, 85.2966 )
+[node name="JumpyThingy" parent="." instance=ExtResource( 5 )]
+position = Vector2( 64.7059, 103.962 )
+
+[node name="JumpyThingy2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 8.62324, 103.962 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 6 )]
+position = Vector2( 139.663, 156.063 )
+scale = Vector2( 5.35, 0.43 )
+
+[node name="NextLevel" parent="." instance=ExtResource( 7 )]
+position = Vector2( 272.666, 49.7566 )

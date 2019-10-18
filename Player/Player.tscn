@@ -1,12 +1,14 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/char.png" type="Texture" id=2]
 [ext_resource path="res://Player/333-3336549_power-up-arrow-pixel-art-clipart.png" type="Texture" id=3]
 [ext_resource path="res://Sounds/Galactic Funk.wav" type="AudioStream" id=4]
 
-[sub_resource type="Animation" id=1]
-resource_name = "Idle"
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.85341, 7.32688 )
+
+[sub_resource type="Animation" id=2]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -21,8 +23,7 @@ tracks/0/keys = {
 "values": [ 0, 4, 5, 6, 7, 0 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Jump"
+[sub_resource type="Animation" id=3]
 length = 0.5
 step = 0.05
 tracks/0/type = "value"
@@ -38,8 +39,7 @@ tracks/0/keys = {
 "values": [ 8, 9, 10, 11 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Walk"
+[sub_resource type="Animation" id=4]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -55,11 +55,7 @@ tracks/0/keys = {
 "values": [ 3, 0, 1, 2, 3 ]
 }
 
-[sub_resource type="RectangleShape2D" id=4]
-
-[sub_resource type="RectangleShape2D" id=5]
-
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=5]
 radius = 19.5086
 
 [node name="Player" type="KinematicBody2D"]
@@ -67,33 +63,27 @@ script = ExtResource( 1 )
 jumpSpeed = 500
 max_height = 500.0
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.695892, 3.01554 )
+shape = SubResource( 1 )
+
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -0.663391, 1.99028 )
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 4
-frame = 11
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
-anims/Idle = SubResource( 1 )
-anims/Jump = SubResource( 2 )
-anims/Walk = SubResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2( 0.873836, 1.07757 )
-shape = SubResource( 4 )
-
-[node name="CollisionCheck" type="Area2D" parent="."]
-editor/display_folded = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionCheck"]
-visible = false
-shape = SubResource( 5 )
+anims/Idle = SubResource( 2 )
+anims/Jump = SubResource( 3 )
+anims/Walk = SubResource( 4 )
 
 [node name="AttackCheck" type="Area2D" parent="."]
 
 [node name="AttackCollisionShape2D" type="CollisionShape2D" parent="AttackCheck"]
-shape = SubResource( 6 )
+shape = SubResource( 5 )
+disabled = true
 
 [node name="Direction" type="Area2D" parent="."]
 
@@ -107,4 +97,3 @@ offset = Vector2( 0, -1500 )
 stream = ExtResource( 4 )
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
-[connection signal="body_entered" from="CollisionCheck" to="." method="_on_CollisionCheck_body_entered"]
