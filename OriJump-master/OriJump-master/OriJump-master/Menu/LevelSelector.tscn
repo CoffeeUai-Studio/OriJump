@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Menu/LevelSelector.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Menu/Button_Font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Menu/ButtonLevel_Padrao.tscn" type="PackedScene" id=4]
+
+[node name="LevelSelector" type="Node"]
+script = ExtResource( 1 )
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( -743.56, 41.3505 )
+texture = ExtResource( 2 )
+offset = Vector2( 1073.56, 298.65 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.239216, 0.247059, 0.321569, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+custom_constants/separation = 100
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 280.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0.337255, 0.054902, 0.388235, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 1
+text = "Choose a level"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 116.0
+margin_right = 280.0
+margin_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_constants/separation = 0
+
+[node name="Button" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
+margin_right = 93.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="Label" parent="VBoxContainer/HBoxContainer/Button" index="0"]
+text = "Level 01"
+
+[node name="Button2" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
+editor/display_folded = true
+margin_left = 93.0
+margin_right = 186.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="Label" parent="VBoxContainer/HBoxContainer/Button2" index="0"]
+text = "Level 02"
+
+[node name="Button3" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
+editor/display_folded = true
+margin_left = 186.0
+margin_right = 280.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="Label" parent="VBoxContainer/HBoxContainer/Button3" index="0"]
+text = "Level 03"
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
+
+[editable path="VBoxContainer/HBoxContainer/Button"]
+
+[editable path="VBoxContainer/HBoxContainer/Button2"]
+
+[editable path="VBoxContainer/HBoxContainer/Button3"]

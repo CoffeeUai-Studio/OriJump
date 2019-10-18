@@ -12,7 +12,6 @@ var speed_y = 0
 
 var can_jump = false
 
-onready var animation : AnimationPlayer = $Sprite/AnimationPlayer
 onready var line: Line2D = $Direction
 
 const jump_force = 2000
@@ -28,20 +27,10 @@ func _physics_process(delta):
 	if is_on_floor():
 		speed_y = 0
 		can_jump = true
-		print('floor')
-		if motion.x != 0:
-			animation.play("Walk")
-		else:
-			animation.play("Idle")
+		print(can_jump)
 	else:
 		motion.y += gravity * delta
-		
-	if motion.x > 0:
-		$Sprite.flip_h = false
-	elif motion.x < 0:
-		$Sprite.flip_h = true
-
-
+	
 	if Input.is_action_pressed("ui_down"):
 		can_jump = true
 	
@@ -74,7 +63,6 @@ func _physics_process(delta):
 func _input(event):
 	if event.is_action_pressed("ui_jump"):
 		if can_jump == true:
-			animation.play("Jump")
 			motion = (mouse_position-global_position).normalized() * jumpSpeed
 			can_jump = false
 	"""
