@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Jump.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/JumpyThingy.gd" type="Script" id=2]
 [ext_resource path="res://Player/items.png" type="Texture" id=3]
+[ext_resource path="res://Scenary/images.jpg" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
@@ -88,3 +89,10 @@ frame = 2
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" index="0"]
 anims/Idle = SubResource( 1 )
 anims/Jump = SubResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="Sprite" index="1"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+texture_scale = 5.72
+color = Color( 0.560784, 0.623529, 0.12549, 1 )
+energy = 5.29
