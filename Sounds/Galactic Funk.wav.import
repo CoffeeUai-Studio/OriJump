@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Galactic Funk.wav-8390eb8ffbeda47c056bfc76c0539e9f.sample"
+
+[deps]
+
+source_file="res://Sounds/Galactic Funk.wav"
+dest_files=[ "res://.import/Galactic Funk.wav-8390eb8ffbeda47c056bfc76c0539e9f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

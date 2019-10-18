@@ -10,10 +10,10 @@ source_file="res://Sounds/Spy.wav"
 [params]
 
 force/8_bit=false
-force/mono=false
+force/mono=true
 force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=true
 edit/normalize=true
 edit/loop=false
-compress/mode=0
+compress/mode=1

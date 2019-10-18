@@ -42,13 +42,10 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 custom_constants/separation = 0
 
-[node name="Button" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
+[node name="Button1" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
 margin_right = 93.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
-
-[node name="Label" parent="VBoxContainer/HBoxContainer/Button" index="0"]
-text = "Level 01"
 
 [node name="Button2" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
 editor/display_folded = true
@@ -69,9 +66,9 @@ size_flags_horizontal = 3
 
 [node name="Label" parent="VBoxContainer/HBoxContainer/Button3" index="0"]
 text = "Level 03"
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
-
-[editable path="VBoxContainer/HBoxContainer/Button"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button1" to="." method="_on_Button1_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button3" to="." method="_on_Button3_pressed"]
 
 [editable path="VBoxContainer/HBoxContainer/Button2"]
 
